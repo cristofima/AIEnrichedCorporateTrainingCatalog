@@ -1,0 +1,32 @@
+{
+  "@odata.context": "https://coronadocatalogsearch.search.windows.net/$metadata#skillsets/$entity",
+  "@odata.etag": "\"0x8DA73CE39E52BF0\"",
+  "name": "azuretable-skillset",
+  "description": "Skillset created from the portal. skillsetName: azuretable-skillset; contentField: PartitionKey; enrichmentGranularity: document; knowledgeStoreStorageAccount: ;",
+  "skills": [
+    {
+      "@odata.type": "#Microsoft.Skills.Text.KeyPhraseExtractionSkill",
+      "name": "#1",
+      "description": null,
+      "context": "/document/PartitionKey",
+      "defaultLanguageCode": "en",
+      "maxKeyPhraseCount": null,
+      "modelVersion": null,
+      "inputs": [
+        {
+          "name": "text",
+          "source": "/document/PartitionKey"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "keyPhrases",
+          "targetName": "keyphrases"
+        }
+      ]
+    }
+  ],
+  "cognitiveServices": null,
+  "knowledgeStore": null,
+  "encryptionKey": null
+}
